@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/app';
+
 
 ReactDOM.render(
-    <div>
-        <h1 className="heading">Employee Directory</h1>
-    </div>,
+    <App />,
     document.getElementById('root')
 );
