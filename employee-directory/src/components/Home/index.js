@@ -1,11 +1,11 @@
 import React from 'react';
-import Home from '../components/Home';
+import { Link } from 'react-router-dom';
 
 function Home() {
     return (
         <div>
             <h1>Employee Directory</h1>
-            <button>View Employee List</button>
+            <Link to='/employee'>View Employee List</Link>
         </div>
     );
 }
