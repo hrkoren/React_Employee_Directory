@@ -1,15 +1,18 @@
-import React from 'react';
+import React, {Component} from 'react';
 import EmployeeCard from '../EmployeeCard/index';
 import API from '../../utils/API';
 
 class Card extends Component {
-    state = {
+    
+constructor(props) {
+    super(props)
+this.state = {
         search: '',
         employees: [],
         employee: '',
         sort: this.sortDirection
     };
-
+}
     get sortDirection() {
         return {
             name: '',
@@ -19,7 +22,7 @@ class Card extends Component {
 
     componentDidMount() {
         API.getEmployees()
-        .then((res) => this.setState({
+        .then((res) => this.setState({ ...this.state,
             employees: res.data.results,
         })
         )
@@ -29,7 +32,7 @@ class Card extends Component {
     handleInputChange = event => {
         const value = event.target.value;
         // const name = event.target.name;
-        this.setState({
+        this.setState({ ...this.state,
             search: value
         });
     };
@@ -38,8 +41,10 @@ render() {
     return (
         <div className='container mt-4'>
         <EmployeeCard
-        state={this.state}
-        sortBy={this.sortBy}        
+        search={this.state.search}
+        employee={this.state.employee}
+        employees={this.state.employees}
+        sort={this.state.sort}        
         />
         </div>
         );
