@@ -4,18 +4,19 @@ body {
 
 .heading {
     font-size: 35px;
-    padding: 20px;
-    background-color: navy;
-    font-family: Georgia;
-    margin: 10px;
-    align-content: center;
+    padding: 25px;
+    background-color: blue;
+    font-family: 'Merriweather', serif;
+    margin: 15px;
+    text-align: center;
     color: white
 }
 
 .link {
     font-size: 25px;
-    font-family: Georgia;
-    paddng: 20px;
+    font-family: 'Merriweather', serif;
+    padding: 20px;
     margin: 15px;
     color: purple;
+    text-align: center;
 }

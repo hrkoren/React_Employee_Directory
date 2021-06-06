@@ -1,6 +1,7 @@
 header {
     background-color: navy;
+    font-family: 'Merriweather', serif;
     color: white;
     border-bottom: 3px solid gray;
-    padding: 20px
+    padding: 20px;    
 }
