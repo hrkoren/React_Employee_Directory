@@ -23,23 +23,25 @@ class Card extends Component {
             employees: res.data.results,
         })
         )
-        .catch(err => consol.log(err));
+        .catch(err => console.log(err));
     };
 
     handleInputChange = event => {
         const value = event.target.value;
-        const name = event.target.name;
+        // const name = event.target.name;
         this.setState({
-            [name]: value
+            search: value
         });
     };
 
 render() {
     return (
-        <EmployeeCard>
+        <div className='container mt-4'>
+        <EmployeeCard
         state={this.state}
         sortBy={this.sortBy}        
-        </EmployeeCard>
+        />
+        </div>
         );
     }
 }
