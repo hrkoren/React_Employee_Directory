@@ -1,18 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import Card from './Card/index';
-import '/style.css';
+import React from 'react';
+import './style.css';
 
-const EmployeeCard
-
+const EmployeeCard = (props) => {
 
 return (
-    <div className="flex flex-wrap">
-        {props.employees.map((employee, index) => {
-            return (<Card picture={employee.picture} name={employee.name} id={employee.id} email={employee.email} phone={employee.phone} location={employee.location} key={index} />)
+    <table className='table table-sortable text-center'>
+        <thead className='thead-dark'>
+            <tr>
+                <th scope='col'>Image</th>
+                <th scope='col' data-field='name' data-sortable='true'>
+                    <span onClick={() => props.sortBy('last', 'first')}>Name</span></th>
+            <th scope='col'>Email</th>
+            <th scope='col'>Phone</th>
+            </tr>
+            </thead>
+        <tbody>
+        {props.state.map((employee) => {
+            return (
+            <tr>
+                <td><img src={employee.picture.thumbnail} alt='employee' /></td>
+                <td className='align-middle'>{employee.fist} {employee.last}</td>
+                <td className='align-middle'>{employee.email}</td>
+                <td className='aligh-middle'>{employee.phone}</td>
+            </tr>
+        );
         })}
-    </div>
-
-)
-}
+        </tbody>
+    </table>
+);
+};
 
 export default EmployeeCard;
