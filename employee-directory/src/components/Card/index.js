@@ -6,8 +6,8 @@ class Card extends Component {
     state = {
         search: '',
         employees: [],
-        // filteredEmployees: [],
-        sortDirections: this.sortDirection
+        employee: '',
+        sort: this.sortDirection
     };
 
     get sortDirection() {
@@ -18,11 +18,11 @@ class Card extends Component {
     }
 
     componentDidMount() {
-        this.searchEmployees('');
-    }
-    searchEmployees = query => {
-        API.search(query)
-        .then(res => this.setState({result: res.data}))
+        API.getEmployees()
+        .then((res) => this.setState({
+            employees: res.data.results,
+        })
+        )
         .catch(err => consol.log(err));
     };
 
@@ -36,11 +36,12 @@ class Card extends Component {
 
 render() {
     return (
-        <Card>
-        <h1 className='heading'>Employee Table</h1>
-        </Card>
-    );
-}
+        <EmployeeCard>
+        state={this.state}
+        sortBy={this.sortBy}        
+        </EmployeeCard>
+        );
+    }
 }
 
 export default Card;

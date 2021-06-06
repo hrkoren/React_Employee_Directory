@@ -1,19 +1,20 @@
 body {
-    background: lightgreen;
-    background-image: url('public/images/find_icon.png')
+    background: lightgray;
 }
 
 .heading {
-    font-size: 40px;
+    font-size: 35px;
     padding: 20px;
-    background-color: green;
-    font-family: Verdana;
+    background-color: navy;
+    font-family: Georgia;
     margin: 10px;
+    align-content: center;
+    color: white
 }
 
 .link {
     font-size: 25px;
-    font-family: Verdana;
+    font-family: Georgia;
     paddng: 20px;
     margin: 15px;
     color: purple;

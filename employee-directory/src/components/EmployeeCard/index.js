@@ -15,16 +15,16 @@ return (
             </tr>
             </thead>
         <tbody>
-        {props.state.map((employee) => {
+        {employee => {
             return (
             <tr>
                 <td><img src={employee.picture.thumbnail} alt='employee' /></td>
-                <td className='align-middle'>{employee.fist} {employee.last}</td>
+                <td className='align-middle'>{employee.first} {employee.last}</td>
                 <td className='align-middle'>{employee.email}</td>
                 <td className='aligh-middle'>{employee.phone}</td>
             </tr>
         );
-        })}
+        }}
         </tbody>
     </table>
 );
