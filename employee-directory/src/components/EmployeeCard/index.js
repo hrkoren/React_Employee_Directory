@@ -9,7 +9,7 @@ return (
             <tr>
                 <th scope='col'>Image</th>
                 <th scope='col' data-field='name' data-sortable='true'>
-                    <span onClick={() => props.sort('last', 'first')}>Name</span></th>
+                    <span onClick={() => props.employees.sort('last', 'first')}>Name</span></th>
             <th scope='col'>Email</th>
             <th scope='col'>Phone</th>
             </tr>
