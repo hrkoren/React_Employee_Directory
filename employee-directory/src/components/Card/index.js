@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import EmployeeCard from '../EmployeeCard/index';
+import Search from '../Search/index';
 import API from '../../utils/API';
 
 class Card extends Component {
@@ -29,15 +30,21 @@ this.state = {
         .catch(err => console.log(err));
     };
 
-    handleInputChange = event => {
+    handleInputChange = (event) => {
         const value = event.target.value;
-        this.setState({ ...this.state,
+        this.setState({...this.state,
             search: value
         });
     };
 
 render() {
     return (
+        <>
+        <Search
+        value={this.state.search}
+        handleInputChange={this.handleInputChange}
+        handleFormSubmit={this.handleFormSubmit}
+        />
         <div className='container mt-4'>
         <EmployeeCard
         search={this.state.search}
@@ -46,6 +53,7 @@ render() {
         sort={this.state.sort}        
         />
         </div>
+        </>
         );
     }
 }

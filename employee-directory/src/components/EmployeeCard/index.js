@@ -22,6 +22,7 @@ return (
                 <td className='align-middle'>{employee.name.first} {employee.name.last}</td>
                 <td className='align-middle'>{employee.email}</td>
                 <td className='align-middle'>{employee.phone}</td>
+                {/* <td className='align-middle'>{employee.dob}</td> */}
             </tr>
         );
         })}
