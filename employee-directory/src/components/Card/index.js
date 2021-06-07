@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import EmployeeCard from '../EmployeeCard/index';
-import Search from '../Search/index';
+import EmployeeCard from '../EmployeeCard';
+import Search from '../Search';
+import Header from '../Header';
 import API from '../../utils/API';
 
 class Card extends Component {
@@ -40,14 +41,14 @@ this.state = {
 render() {
     return (
         <>
+        <Header/>
         <Search
-        value={this.state.search}
+        search={this.state.search}
         handleInputChange={this.handleInputChange}
         handleFormSubmit={this.handleFormSubmit}
         />
         <div className='container mt-4'>
         <EmployeeCard
-        search={this.state.search}
         employee={this.state.employee}
         employees={this.state.employees}
         sort={this.state.sort}        

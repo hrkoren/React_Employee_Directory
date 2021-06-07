@@ -6,7 +6,7 @@ tbody {
     display: block;
     overflow-y: auto;
     overflow-x: hidden;
-    max-height: 80vh;
+    max-height: 70vh;
     text-align: center;
 }
 
@@ -20,7 +20,7 @@ thead, tbody tr {
 }
 
 thead {
-    margin-top: 40px;
+    margin-top: 10px;
     font-family: 'Merriweather', serif;
     background-color: navy;
     color: white;
