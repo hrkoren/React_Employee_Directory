@@ -6,8 +6,8 @@ tbody {
     display: block;
     overflow-y: auto;
     overflow-x: hidden;
-    max-height: 70vh;
-    text-align: center;
+    max-height: 60vh;
+    /* text-align: center; */
 }
 
 thead, tbody tr {
@@ -16,20 +16,21 @@ thead, tbody tr {
     table-layout: fixed;
     font-family: 'Merriweather', serif;
     background-color: gray;
-    text-align: center;
+    /* text-align: center; */
 }
 
 thead {
-    margin-top: 10px;
+    margin-top: 5px;
     font-family: 'Merriweather', serif;
     background-color: navy;
     color: white;
-    text-align: center;
-    padding-left: 15px;
+    border-bottom: 4px solid gray;
+    /* text-align: center; */
+    /* padding-left: 15px; */
 }
 
 .align-middle {
-    text-align: center;
+    /* text-align: center; */
      color: black;
 }
 
