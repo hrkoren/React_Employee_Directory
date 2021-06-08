@@ -12,7 +12,8 @@ class Card extends Component {
             search: '',
             employees: [],
             employee: '',
-            sort: this.sortDirection
+            sort: this.sortDirection,
+            filterEmployees: []
         };
     }
     get sortDirection() {
@@ -25,21 +26,29 @@ class Card extends Component {
     componentDidMount() {
         API.getEmployees()
             .then((res) => this.setState({
-                ...this.state,
+                // ...this.state,
                 employees: res.data.results,
+                filterEmployees: res.data.results
             })
             )
             .catch(err => console.log(err));
     };
 
     handleInputChange = (event) => {
-        const searchTerm = event.target.value;
+        
+        const searchTerm = event.target.value.toLowerCase()
+        //  console.log(searchTerm);
+        const filterEmployees = this.state.employees.filter((employee) => {
+            return (employee.name.last.toLowerCase().indexOf(searchTerm) !== -1)
+        }) 
         this.setState({
-            search: searchTerm
+            search: searchTerm,
+            filterEmployees
         });
     };
 
     render() {
+        // console.log(this.state.employees)
         return (
             <>
                 <Header />
@@ -50,7 +59,7 @@ class Card extends Component {
                 <div className='container mt-4'>
                     <EmployeeCard
                         employee={this.state.employee}
-                        employees={this.state.employees}
+                        employees={this.state.filterEmployees}
                         sort={this.state.sort}
                     />
                 </div>
