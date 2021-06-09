@@ -35,12 +35,12 @@ class Card extends Component {
     };
 
     handleInputChange = (event) => {
-        
+
         const searchTerm = event.target.value.toLowerCase()
         //  console.log(searchTerm);
         const filterEmployees = this.state.employees.filter((employee) => {
             return (employee.name.last.toLowerCase().indexOf(searchTerm) !== -1)
-        }) 
+        })
         this.setState({
             search: searchTerm,
             filterEmployees

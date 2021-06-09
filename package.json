@@ -2,6 +2,7 @@
   "name": "employee-directory",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://hrkoren.github.io/React_Employee_Directory/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
@@ -49,6 +50,5 @@
   },
   "devDependencies": {
     "eslint-plugin-react": "^7.24.0"
-  },
-  "homepage": "https://hrkoren.github.io/React_Employee_Directory/"
+  }
 }
